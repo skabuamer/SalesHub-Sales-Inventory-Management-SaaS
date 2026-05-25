@@ -109,9 +109,9 @@ SalesHub helps businesses manage products, inventory, customers, invoices, and s
 
 # 📸 Project Screenshots
 
-> Add screenshots/gifs here for better recruiter presentation.
+<!-- > Add screenshots/gifs here for better recruiter presentation. -->
 
-Recommended screenshots:
+<!-- Recommended screenshots:
 
 - Dashboard Overview
 - Product Management
@@ -125,7 +125,7 @@ Example:
 ![Dashboard Screenshot](./screenshots/dashboard.png)
 ```
 
----
+--- -->
 
 # 🚀 Installation & Setup
 
