@@ -33,15 +33,14 @@ class ProductController extends Controller
 
         if ($request->hasFile('img')) {
             $image = $request->file('img');
+            $fileName = time() . '_' . uniqid() . '.' . $image->getClientOriginalExtension();
 
-            $fileName = time() . '.' . $image->getClientOriginalExtension();
-            $filePath = 'uploads/' . $fileName;
+            // Hardcoded target mapping directly to cPanel's public web root
+            $targetPath = $_SERVER['DOCUMENT_ROOT'] . '/uploads';
+            $image->move($targetPath, $fileName);
 
-            $image->move(public_path('uploads'), $fileName);
-
-            $data['img'] = $filePath;
+            $data['img'] = 'uploads/' . $fileName;
         }
-
         Product::create($data);
 
         return back()->with([
@@ -106,9 +105,11 @@ class ProductController extends Controller
 
 
         if ($request->hasFile('img')) {
+            $targetPath = $_SERVER['DOCUMENT_ROOT'] . '/uploads';
 
-            if ($product->img && file_exists(public_path($product->img))) {
-                unlink(public_path($product->img)); // removing the existing data from file if it already exist
+            // Delete the old file using the corrected folder map
+            if ($product->img && file_exists($_SERVER['DOCUMENT_ROOT'] . '/' . $product->img)) {
+                unlink($_SERVER['DOCUMENT_ROOT'] . '/' . $product->img);
             }
 
             $request->validate([
@@ -116,13 +117,10 @@ class ProductController extends Controller
             ]);
 
             $image = $request->file('img');
+            $fileName = time() . '_' . uniqid() . '.' . $image->getClientOriginalExtension();
 
-            $fileName = time() . '.' . $image->getClientOriginalExtension();
-            $filePath = 'uploads/' . $fileName;
-
-            $image->move(public_path('uploads'), $fileName);
-
-            $product->img = $filePath; //updating the data
+            $image->move($targetPath, $fileName);
+            $product->img = 'uploads/' . $fileName;
         }
 
         $product->save();
@@ -148,8 +146,8 @@ class ProductController extends Controller
                 ]);
             }
 
-            if ($product->img && file_exists(public_path($product->img))) {
-                unlink(public_path($product->img));
+            if ($product->img && file_exists($_SERVER['DOCUMENT_ROOT'] . '/' . $product->img)) {
+                unlink($_SERVER['DOCUMENT_ROOT'] . '/' . $product->img);
             }
 
             $product->delete();

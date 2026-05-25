@@ -35,7 +35,13 @@ const imageSelected = (e) => {
                 class="w-full h-full flex flex-col items-center justify-center p-5"
             >
                 <img
-                    :src="(preview || currentImage) ?? '/placeholder.png'"
+                    :src="
+                        preview
+                            ? preview
+                            : productImage
+                              ? '/' + productImage
+                              : '/placeholder.png'
+                    "
                     alt="Image"
                     class="w-full h-32 object-cover rounded-[14px] border border-border shadow-sm"
                 />

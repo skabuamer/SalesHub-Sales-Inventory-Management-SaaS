@@ -74,9 +74,15 @@ const submit = () => {
                     <!-- Button -->
                     <div class="md:col-span-2 flex justify-end pt-2">
                         <button
-                            class="bg-gold hover:bg-[#d4b87a] text-[#0e0e10] text-[14px] font-bold px-6 py-3 rounded-[12px] tracking-[-0.02em] transition-all"
+                            type="submit"
+                            :disabled="form.processing"
+                            class="bg-gold hover:bg-[#d4b87a] text-[#0e0e10] text-[14px] font-bold px-6 py-3 rounded-[12px] tracking-[-0.02em] transition-all disabled:opacity-50"
                         >
-                            Update Profile
+                            {{
+                                form.processing
+                                    ? "Updating..."
+                                    : "Update Profile"
+                            }}
                         </button>
                     </div>
                 </form>

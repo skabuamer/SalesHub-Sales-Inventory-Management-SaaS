@@ -36,13 +36,14 @@ const submit = () => {
 <template>
     <SideNavLayout>
         <div
-            class="max-w-md mx-auto bg-surface border border-border rounded-[24px] p-7 shadow-[0_0_0_1px_rgba(255,255,255,0.02)]"
+            class="w-full max-w-2xl mx-auto bg-surface border border-border rounded-[20px] sm:rounded-[24px] p-5 sm:p-7 shadow-[0_0_0_1px_rgba(255,255,255,0.02)]"
         >
-            <!-- Header -->
-            <div class="flex items-center justify-between mb-6">
+            <div
+                class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8"
+            >
                 <div>
                     <h1
-                        class="text-[26px] font-bold text-[#e8e3db] tracking-[-0.04em] leading-tight"
+                        class="text-[22px] sm:text-[26px] font-bold text-[#e8e3db] tracking-[-0.04em] leading-tight"
                     >
                         Add/Edit Customer
                     </h1>
@@ -54,16 +55,14 @@ const submit = () => {
 
                 <Link
                     href="/customers"
-                    class="flex items-center gap-2 bg-[#111114] border border-border hover:border-[#c8a96e33] text-ink text-[13px] font-medium px-4 py-2 rounded-[12px] transition-all"
+                    class="w-fit flex items-center gap-2 bg-[#111114] border border-border hover:border-[#c8a96e33] text-ink text-[13px] font-medium px-4 py-2 rounded-[12px] transition-all"
                 >
                     <span>←</span>
                     Back
                 </Link>
             </div>
 
-            <!-- Form -->
-            <form @submit.prevent="submit" class="space-y-5">
-                <!-- Name -->
+            <form @submit.prevent="submit" class="space-y-6">
                 <div>
                     <label
                         class="block text-[12px] font-medium text-[#7d7d92] uppercase tracking-wide mb-2"
@@ -78,7 +77,6 @@ const submit = () => {
                         class="w-full bg-[#111114] border border-border rounded-[12px] px-4 py-3 text-[14px] text-ink placeholder-[#4c4c5d] outline-none transition-all focus:border-[#c8a96e55] focus:ring-1 focus:ring-[#c8a96e33]"
                     />
 
-                    <!-- validation check -->
                     <div
                         v-if="form.errors.name"
                         class="text-[#ff8f8f] text-[12px] mt-2"
@@ -87,7 +85,6 @@ const submit = () => {
                     </div>
                 </div>
 
-                <!-- Email -->
                 <div>
                     <label
                         class="block text-[12px] font-medium text-[#7d7d92] uppercase tracking-wide mb-2"
@@ -102,7 +99,6 @@ const submit = () => {
                         class="w-full bg-[#111114] border border-border rounded-[12px] px-4 py-3 text-[14px] text-ink placeholder-[#4c4c5d] outline-none transition-all focus:border-[#c8a96e55] focus:ring-1 focus:ring-[#c8a96e33]"
                     />
 
-                    <!-- validation check -->
                     <div
                         v-if="form.errors.email"
                         class="text-[#ff8f8f] text-[12px] mt-2"
@@ -111,7 +107,6 @@ const submit = () => {
                     </div>
                 </div>
 
-                <!-- Phone -->
                 <div>
                     <label
                         class="block text-[12px] font-medium text-[#7d7d92] uppercase tracking-wide mb-2"
@@ -126,7 +121,6 @@ const submit = () => {
                         class="w-full bg-[#111114] border border-border rounded-[12px] px-4 py-3 text-[14px] text-ink placeholder-[#4c4c5d] outline-none transition-all focus:border-[#c8a96e55] focus:ring-1 focus:ring-[#c8a96e33]"
                     />
 
-                    <!-- validation check -->
                     <div
                         v-if="form.errors.phone"
                         class="text-[#ff8f8f] text-[12px] mt-2"
@@ -135,12 +129,12 @@ const submit = () => {
                     </div>
                 </div>
 
-                <!-- Submit -->
                 <button
                     type="submit"
-                    class="w-full bg-gold hover:bg-[#d4b87a] text-[#0e0e10] text-[14px] font-bold py-3 rounded-[12px] tracking-[-0.02em] transition-all"
+                    :disabled="form.processing"
+                    class="w-full bg-gold hover:bg-[#d4b87a] text-[#0e0e10] text-[14px] font-bold py-3.5 rounded-[12px] tracking-[-0.02em] transition-all disabled:opacity-50"
                 >
-                    Save Customer
+                    {{ form.processing ? "Saving..." : "Save Customer" }}
                 </button>
             </form>
         </div>

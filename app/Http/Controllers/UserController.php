@@ -56,7 +56,7 @@ class UserController extends Controller
 
             return redirect()->route('dashboard')->with([
                 'status' => 'success',
-                'message' => 'User registered successfully',
+                'message' => 'Registered successfully',
                 "error" => "",
             ])->cookie('token', $token, 60 * 24 * 30);
         } catch (Exception $e) {
@@ -81,7 +81,7 @@ class UserController extends Controller
 
             $data = [
                 'status' => 'true',
-                'message' => 'User logged in successfully',
+                'message' => 'Logged in successfully',
                 "error" => "",
             ];
             return redirect()->route('dashboard')->with($data)->cookie('token', $token, 60 * 24 * 30);

@@ -9,9 +9,10 @@ const summary = page.props.data;
 
 <template>
     <SideNavLayout>
-        <main class="flex-1 px-8 py-9">
-            <!-- Welcome -->
-            <div class="flex items-start justify-between mb-8">
+        <main class="flex-1 px-4 sm:px-6 md:px-8 py-6 md:py-9">
+            <div
+                class="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-8"
+            >
                 <div>
                     <p
                         class="text-[11.5px] font-semibold tracking-[0.06em] uppercase text-[#f5f5f5] mb-1.5"
@@ -19,7 +20,7 @@ const summary = page.props.data;
                         Dashboard
                     </p>
                     <h1
-                        class="text-[26px] font-bold text-[#e8e3db] tracking-[-0.04em] leading-tight"
+                        class="text-[22px] sm:text-[24px] md:text-[26px] font-bold text-[#e8e3db] tracking-[-0.04em] leading-tight"
                     >
                         Welcome to SalesHub,
                         <span class="text-[#c8a96e]">{{
@@ -29,7 +30,7 @@ const summary = page.props.data;
                 </div>
                 <Link
                     href="/create-sale"
-                    class="flex items-center gap-1.5 bg-[#c8a96e] hover:bg-[#d4b87a] text-[#0e0e10] text-[13px] font-bold px-4 py-2 rounded-[10px] tracking-[-0.02em] transition-colors"
+                    class="flex items-center justify-center gap-1.5 bg-[#c8a96e] hover:bg-[#d4b87a] text-[#0e0e10] text-[13px] font-bold px-4 py-2.5 sm:py-2 rounded-[10px] tracking-[-0.02em] transition-colors self-start sm:self-auto w-full sm:w-auto"
                 >
                     <svg
                         width="13"
@@ -49,11 +50,11 @@ const summary = page.props.data;
                 </Link>
             </div>
 
-            <!-- Stat Cards -->
-            <div class="grid grid-cols-4 gap-3.5 mb-6">
-                <!-- Revenue -->
+            <div
+                class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 mb-6"
+            >
                 <div
-                    class="bg-[#13110e] border border-[#2a2418] rounded-2xl p-6 flex flex-col gap-4 hover:-translate-y-0.5 transition-transform cursor-pointer"
+                    class="bg-[#13110e] border border-[#2a2418] rounded-2xl p-5 md:p-6 flex flex-col gap-4 hover:-translate-y-0.5 transition-transform cursor-pointer"
                 >
                     <div class="flex items-center justify-between">
                         <div
@@ -82,16 +83,15 @@ const summary = page.props.data;
                             Total Revenue
                         </p>
                         <p
-                            class="mono text-[28px] font-medium text-[#c8a96e] tracking-[-0.03em]"
+                            class="mono text-[24px] md:text-[28px] font-medium text-[#c8a96e] tracking-[-0.03em]"
                         >
                             {{ summary.payable }}
                         </p>
                     </div>
                 </div>
 
-                <!-- Customers -->
                 <div
-                    class="bg-[#0d1210] border border-[#182420] rounded-2xl p-6 flex flex-col gap-4 hover:-translate-y-0.5 transition-transform cursor-pointer"
+                    class="bg-[#0d1210] border border-[#182420] rounded-2xl p-5 md:p-6 flex flex-col gap-4 hover:-translate-y-0.5 transition-transform cursor-pointer"
                 >
                     <div class="flex items-center justify-between">
                         <div
@@ -120,16 +120,15 @@ const summary = page.props.data;
                             Total Customers
                         </p>
                         <p
-                            class="mono text-[28px] font-medium text-[#4caf88] tracking-[-0.03em]"
+                            class="mono text-[24px] md:text-[28px] font-medium text-[#4caf88] tracking-[-0.03em]"
                         >
                             {{ summary.customers }}
                         </p>
                     </div>
                 </div>
 
-                <!-- Products -->
                 <div
-                    class="bg-[#110f14] border border-[#211d28] rounded-2xl p-6 flex flex-col gap-4 hover:-translate-y-0.5 transition-transform cursor-pointer"
+                    class="bg-[#110f14] border border-[#211d28] rounded-2xl p-5 md:p-6 flex flex-col gap-4 hover:-translate-y-0.5 transition-transform cursor-pointer"
                 >
                     <div class="flex items-center justify-between">
                         <div
@@ -158,16 +157,15 @@ const summary = page.props.data;
                             Total Products
                         </p>
                         <p
-                            class="mono text-[28px] font-medium text-[#a78bfa] tracking-[-0.03em]"
+                            class="mono text-[24px] md:text-[28px] font-medium text-[#a78bfa] tracking-[-0.03em]"
                         >
                             {{ summary.products }}
                         </p>
                     </div>
                 </div>
 
-                <!-- Sales -->
                 <div
-                    class="bg-[#0f1114] border border-[#1c2028] rounded-2xl p-6 flex flex-col gap-4 hover:-translate-y-0.5 transition-transform cursor-pointer"
+                    class="bg-[#0f1114] border border-[#1c2028] rounded-2xl p-5 md:p-6 flex flex-col gap-4 hover:-translate-y-0.5 transition-transform cursor-pointer"
                 >
                     <div class="flex items-center justify-between">
                         <div
@@ -196,7 +194,7 @@ const summary = page.props.data;
                             Total Sales
                         </p>
                         <p
-                            class="mono text-[28px] font-medium text-[#60a5fa] tracking-[-0.03em]"
+                            class="mono text-[24px] md:text-[28px] font-medium text-[#60a5fa] tracking-[-0.03em]"
                         >
                             {{ summary.sales }}
                         </p>

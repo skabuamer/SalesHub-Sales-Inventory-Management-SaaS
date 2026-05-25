@@ -1,17 +1,21 @@
 <script setup>
 import { Toaster } from "@/Components/ui/sonner";
 import { Link, usePage } from "@inertiajs/vue3";
+import { ref } from "vue";
+
+const sidebarOpen = ref(false);
 
 const page = usePage();
 </script>
 
 <template>
-    <div class="flex h-screen">
-        <!-- Sidebar -->
+    <div class="flex h-screen overflow-hidden">
         <aside
-            class="sticky top-0 left-0 z-30 w-[clamp(200px,11.56vw,220px)] min-h-screen flex flex-col bg-[#111113] border-r border-[#1a1a1e]"
+            :class="[
+                'fixed md:sticky top-0 left-0 z-40 w-[clamp(200px,11.56vw,220px)] min-h-screen flex flex-col bg-[#111113] border-r border-[#1a1a1e] transition-transform duration-300 ease-in-out md:translate-x-0',
+                sidebarOpen ? 'translate-x-0' : '-translate-x-full',
+            ]"
         >
-            <!-- Logo -->
             <div
                 class="flex items-center gap-2.5 px-[18px] py-5 border-b border-[#1a1a1e]"
             >
@@ -39,8 +43,9 @@ const page = usePage();
                 >
             </div>
 
-            <!-- Nav -->
-            <nav class="flex-1 flex flex-col gap-0.5 px-2.5 py-3.5">
+            <nav
+                class="flex-1 flex flex-col gap-0.5 px-2.5 py-3.5 overflow-y-auto"
+            >
                 <p
                     class="text-[10px] font-semibold tracking-[0.08em] uppercase text-[#3a3a48] px-2 mb-2"
                 >
@@ -212,12 +217,37 @@ const page = usePage();
             </nav>
         </aside>
 
-        <!-- Main Content Wrapper -->
-        <div class="flex-1 flex flex-col transition-all duration-300">
-            <!-- Top Bar -->
+        <div class="flex-1 flex flex-col min-w-0 transition-all duration-300">
+            <header
+                class="flex md:hidden items-center justify-between px-5 py-4 bg-[#111113] border-b border-[#1a1a1e] shrink-0"
+            >
+                <button
+                    @click="sidebarOpen = true"
+                    class="p-1 rounded-md text-subtle hover:text-ink hover:bg-border transition-colors focus:outline-none"
+                >
+                    <svg
+                        width="20"
+                        height="20"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        stroke-width="2"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M4 6h16M4 12h16M4 18h16"
+                        />
+                    </svg>
+                </button>
+                <span
+                    class="text-[15px] font-bold text-[#e8e3db] tracking-[-0.03em]"
+                    >SalesHub</span
+                >
+                <div class="w-7"></div>
+            </header>
 
-            <!-- Main Content -->
-            <main class="flex-1 overflow-y-auto p-5">
+            <main class="flex-1 overflow-y-auto p-4 md:p-5">
                 <slot></slot>
                 <Toaster
                     theme="dark"
@@ -228,10 +258,9 @@ const page = usePage();
             </main>
         </div>
 
-        <!-- Mobile Overlay -->
         <div
             v-if="sidebarOpen"
-            class="top-0 inset-0 bg-black bg-opacity-50 z-30 md:hidden"
+            class="fixed inset-0 bg-black bg-opacity-50 z-30 md:hidden"
             @click="sidebarOpen = false"
         ></div>
     </div>

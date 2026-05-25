@@ -1,59 +1,257 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# SalesHub — Sales Inventory Management SaaS
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A modern full-stack Sales & Inventory Management SaaS application built with Laravel, Vue.js, Inertia.js, Tailwind CSS, and MySQL.
 
-## About Laravel
+SalesHub helps businesses manage products, inventory, customers, invoices, and sales operations through a clean and responsive dashboard interface. The project focuses on scalable CRUD architecture, business workflow management, and modern frontend/backend integration using Laravel + Vue ecosystem.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🔗 Live Demo
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+🌐 Live Preview: https://saleshub.devamer.com
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+# ✨ Key Features
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 📦 Product & Inventory Management
 
-## Laravel Sponsors
+- Create, update, and delete products
+- Product category management
+- Product image upload
+- Real-time stock quantity management
+- Inventory tracking system
+- Product search and filtering
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+---
 
-### Premium Partners
+## 👥 Customer Management
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+- Customer CRUD operations
+- Customer profile management
+- Purchase history tracking
+- Customer database management
 
-## Contributing
+---
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## 🧾 Invoice & Sales System
 
-## Code of Conduct
+- Create sales invoices dynamically
+- Invoice item management
+- Automatic total calculations
+- Sales history tracking
+- Invoice management dashboard
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+---
 
-## Security Vulnerabilities
+## 📊 Dashboard & Analytics
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- Sales overview dashboard
+- Inventory statistics
+- Revenue insights
+- Business summary cards
+- Responsive admin analytics interface
 
-## License
+---
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 🔐 Authentication & Security
+
+- Authentication system
+- Protected dashboard routes
+- Form validation
+- Session-based authentication
+- Secure CRUD operations
+
+---
+
+## 🎨 Modern UI/UX
+
+- Responsive admin dashboard
+- Clean and minimal interface
+- Modern table and form layouts
+- Tailwind CSS powered UI
+- Component-based frontend architecture
+- Mobile responsive design
+
+---
+
+# 🛠️ Tech Stack
+
+## Backend
+
+- Laravel
+
+## Frontend
+
+- Vue.js
+- Inertia.js
+- Tailwind CSS
+- shadcn/ui
+
+## Database
+
+- MySQL
+
+---
+
+# 🧠 Technical Highlights
+
+- Built using modern Laravel + Vue architecture
+- Integrated frontend and backend using Inertia.js
+- Organized reusable UI components
+- Relational database design with MySQL
+- Dynamic CRUD operations with validation
+- Responsive SaaS-style dashboard implementation
+- Image upload and file handling system
+- Clean project structure and scalable code organization
+
+---
+
+# 📸 Project Screenshots
+
+> Add screenshots/gifs here for better recruiter presentation.
+
+Recommended screenshots:
+
+- Dashboard Overview
+- Product Management
+- Invoice Creation
+- Customer Management
+- Sales Analytics
+
+Example:
+
+```md
+![Dashboard Screenshot](./screenshots/dashboard.png)
+```
+
+---
+
+# 🚀 Installation & Setup
+
+## Clone Repository
+
+```bash
+git clone https://github.com/your-username/saleshub.git
+```
+
+---
+
+## Navigate to Project Directory
+
+```bash
+cd saleshub
+```
+
+---
+
+## Install Backend Dependencies
+
+```bash
+composer install
+```
+
+---
+
+## Install Frontend Dependencies
+
+```bash
+npm install
+```
+
+---
+
+## Create Environment File
+
+```bash
+cp .env.example .env
+```
+
+---
+
+## Generate Application Key
+
+```bash
+php artisan key:generate
+```
+
+---
+
+## Configure Database
+
+Update your `.env` file:
+
+```env
+DB_DATABASE=your_database_name
+DB_USERNAME=your_database_user
+DB_PASSWORD=your_database_password
+```
+
+---
+
+## Run Database Migrations
+
+```bash
+php artisan migrate
+```
+
+---
+
+## Start Laravel Server
+
+```bash
+php artisan serve
+```
+
+---
+
+## Start Vite Development Server
+
+```bash
+npm run dev
+```
+
+---
+
+# 📂 Folder Structure
+
+```bash
+app/
+resources/
+routes/
+database/
+public/
+```
+
+---
+
+# 📈 Future Improvements
+
+- Multi-role access system
+- Advanced reporting
+- Sales export system
+- AI-powered sales insights
+- Multi-tenant SaaS architecture
+- Email notification system
+- Advanced analytics dashboard
+
+---
+
+# 👨‍💻 Developer
+
+## Abu Amer
+
+Frontend-focused Full Stack Developer with experience in:
+
+- Laravel
+- Vue.js
+- React.js
+- Next.js
+- Tailwind CSS
+- Modern UI/UX Development
+
+---
+
+# 📄 License
+
+This project is built for learning and portfolio purposes.
